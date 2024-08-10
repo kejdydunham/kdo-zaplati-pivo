@@ -1,15 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './app/App';
 import reportWebVitals from './reportWebVitals';
+import {createLogger} from 'redux-logger';
+import {RootState} from "./app/types";
+import {applyMiddleware, createStore} from "redux";
+import {appInitialState, createRootReducer} from "./app/rootReducer";
+import storageMiddleware from "./app/storageMiddleware";
+import {retrieveStateFromStorage} from "./app/localStorage";
+
+const loadedStateFromStorage = retrieveStateFromStorage();
+
+const initialState: RootState = loadedStateFromStorage || {
+    app: appInitialState,
+}
+
+const middlewares: any[] = [
+    createLogger({
+        duration: true,
+    }),
+    storageMiddleware,
+]
+
+const store = createStore<RootState>(
+    createRootReducer(),
+    initialState,
+    applyMiddleware(...middlewares)
+);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <App store={store} />
   </React.StrictMode>
 );
 
