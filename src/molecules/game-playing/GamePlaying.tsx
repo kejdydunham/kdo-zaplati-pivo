@@ -21,8 +21,10 @@ interface DispatchProps {
 type Props = StoreProps & DispatchProps;
 
 function GamePlaying(props: Props) {
-    const {currentPlayerNumber, currentPlayerData, playerCount, goToNextPlayer,
-        finish, changePlayerValue, changePlayerName} = props
+    const {
+        currentPlayerNumber, currentPlayerData, playerCount, goToNextPlayer,
+        finish, changePlayerValue, changePlayerName
+    } = props
     const isLastPlayer = currentPlayerNumber === playerCount;
     const {value, name} = currentPlayerData;
     const onClick = () => {
@@ -34,10 +36,13 @@ function GamePlaying(props: Props) {
     }
 
     const onNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        changePlayerName({
-            playerNumber: currentPlayerNumber,
-            name: event.target.value
-        })
+        let value = event.target.value || "";
+        if (value.length < 51) {
+            changePlayerName({
+                playerNumber: currentPlayerNumber,
+                name: value
+            })
+        }
     }
 
     const onValueChange = (event: React.ChangeEvent<HTMLInputElement>) => {

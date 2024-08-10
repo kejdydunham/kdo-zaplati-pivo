@@ -5,7 +5,7 @@ import App from './app/App';
 import reportWebVitals from './reportWebVitals';
 import {createLogger} from 'redux-logger';
 import {RootState} from "./app/types";
-import {applyMiddleware, createStore} from "redux";
+import {applyMiddleware, legacy_createStore as createStore} from "redux";
 import {appInitialState, createRootReducer} from "./app/storage/rootReducer";
 import storageMiddleware from "./app/storage/storageMiddleware";
 import {retrieveStateFromStorage} from "./app/storage/localStorage";
@@ -23,7 +23,7 @@ const middlewares: any[] = [
     storageMiddleware,
 ]
 
-const store = createStore<RootState>(
+const store = createStore(
     createRootReducer(),
     initialState,
     applyMiddleware(...middlewares)

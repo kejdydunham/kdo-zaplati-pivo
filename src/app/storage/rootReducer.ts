@@ -11,7 +11,6 @@ export interface AppState {
     currentPlayer?: number;
     playerData: PlayersData;
     winningNumber?: number;
-    // winner?: Player,
 }
 
 export const appInitialState: AppState = {
@@ -29,18 +28,15 @@ const app = (state: AppState = appInitialState, action: RootActionType): AppStat
             };
         }
         case getType(appActions.goToNextPlayer): {
-            // const {currentPlayer} = action.payload;
             return {
                 ...state,
                 currentPlayer: (state.currentPlayer || 1) + 1
             }
         }
         case getType(appActions.finish): {
-            // const {winnerNumber} = action.payload;
             return {
                 ...state,
                 gameProgress: GameProgress.FINISHED,
-                // winner: state.playerData[winnerNumber]
             }
         }
         case getType(appActions.setPlayerCount): {
@@ -81,6 +77,5 @@ const app = (state: AppState = appInitialState, action: RootActionType): AppStat
 }
 
 export const createRootReducer = () => combineReducers<RootState>({
-    // @ts-ignore dont have time for this shit now
     app,
 })

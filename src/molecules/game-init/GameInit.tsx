@@ -23,7 +23,11 @@ function GameInit({startGame, playerCount = undefined, setPlayerCount}: Props) {
     }
 
     const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const valueUnchecked = parseInt(event.target.value, 10);
+        let valueUnchecked = parseInt(event.target.value, 10);
+        if (valueUnchecked > 100) {
+            // so many of you? The app would be unusable for this kind of big lunch...
+            valueUnchecked = 100;
+        }
         setPlayerCount({
             playerCount: valueUnchecked
         })
@@ -41,7 +45,7 @@ function GameInit({startGame, playerCount = undefined, setPlayerCount}: Props) {
                 Kdo bude nejblíž k náhodně vybranému číslu, tak platí oběd.
                 Tím pádem to vlastně vyhrál i prohrál naráz. Good luck :D
             </p>
-            <h3>Kolik vas dneska jedlo?</h3>
+            <h3>Kolik vás dneska jedlo?</h3>
             <div>
                 <Input onChange={onInputChange} title="Takže kolik?" type="number" defaultValue={playerCount || ""}/>
             </div>
