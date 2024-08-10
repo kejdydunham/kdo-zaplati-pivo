@@ -4,16 +4,6 @@ interface SetPlayerCountPayload {
     playerCount: number
 }
 
-interface PlayPayload {
-    currentPlayer: number;
-    // name: string;
-    // value: number;
-}
-
-interface FinishPayload {
-    winnerNumber: number;
-}
-
 interface ChangePlayerValuePayload {
     playerNumber: number;
     value?: number;

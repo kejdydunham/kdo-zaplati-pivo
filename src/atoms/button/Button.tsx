@@ -3,16 +3,16 @@ import React from "react";
 
 interface Props {
     onClick: (event: React.MouseEvent<HTMLButtonElement>) => any;
-    isButtonDisabled: boolean;
+    isButtonDisabled?: boolean;
     title: string;
-    // className: string;
+    className?: string;
 }
 
-function Button({isButtonDisabled, onClick, title}: Props) {
+function Button({isButtonDisabled, onClick, title, className}: Props) {
     return (
         <button
             onClick={onClick}
-            className={`button ${isButtonDisabled ? "button--disabled" : ""}`}
+            className={`button ${isButtonDisabled ? "button--disabled" : ""} ${className}`}
             disabled={isButtonDisabled}
         >
             {title}

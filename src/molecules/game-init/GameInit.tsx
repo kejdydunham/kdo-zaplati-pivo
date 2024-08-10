@@ -43,13 +43,7 @@ function GameInit({startGame, playerCount = undefined, setPlayerCount}: Props) {
             </p>
             <h3>Kolik vas dneska jedlo?</h3>
             <div>
-                <Input onChange={onInputChange} title="Takze kolik?" type="number" defaultValue={playerCount || ""}/>
-                {/*<input
-                    type="number"
-                    defaultValue={playerCount || ""}
-                    onChange={onInputChange}
-                    placeholder="Takze kolik?"
-                />*/}
+                <Input onChange={onInputChange} title="Takže kolik?" type="number" defaultValue={playerCount || ""}/>
             </div>
             <div>
                 <Button

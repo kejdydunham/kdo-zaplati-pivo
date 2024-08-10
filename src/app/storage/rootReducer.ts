@@ -1,8 +1,8 @@
 import {combineReducers} from "redux";
-import {AppAction, appActions} from "./actions";
-import {PlayersData, RootState} from "./types";
+import {AppAction, appActions} from "../actions";
+import {PlayersData, RootState} from "../types";
 import {getType} from "typesafe-actions";
-import {GameProgress} from "../organisms/game/types";
+import {GameProgress} from "../../organisms/game/types";
 import {assocPath} from "ramda";
 
 export interface AppState {

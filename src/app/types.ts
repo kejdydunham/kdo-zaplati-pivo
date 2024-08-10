@@ -1,4 +1,4 @@
-import {AppState} from "./rootReducer";
+import {AppState} from "./storage/rootReducer";
 
 export interface RootState {
     app: AppState;

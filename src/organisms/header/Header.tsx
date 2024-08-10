@@ -4,9 +4,9 @@ import React from 'react';
 function Header() {
     return (
         <div className="header">
-            <h1>
+            <b className="title">
                 Kdo pak nám zaplatí oběd dneska?
-            </h1>
+            </b>
         </div>
     )
 }

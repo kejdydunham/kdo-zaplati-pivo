@@ -3,7 +3,6 @@ import React from "react";
 
 interface Props {
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => any;
-    // isButtonDisabled: boolean;
     title: string;
     type: 'text' | 'number';
     defaultValue?: number | string;

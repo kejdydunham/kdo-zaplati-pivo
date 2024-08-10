@@ -1,7 +1,28 @@
 .button {
   margin: 5px 0;
+
+  background-color: cornflowerblue;
+  border: 0;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: .8em 1.2em;
+  transition: background-color ease-in .2s;
+}
+
+.button:not(.button--disabled):hover {
+  background-color: #477eeb;
 }
 
 .button.button--disabled {
   background-color: gray;
+}
+
+.button.secondary:not(.button--disabled) {
+  background-color: cadetblue;
+
+  &:hover {
+    background-color: lightseagreen;
+  }
 }

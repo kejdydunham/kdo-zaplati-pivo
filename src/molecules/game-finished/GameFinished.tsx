@@ -43,7 +43,6 @@ function GameFinished({winningNumber, playersData, initGame}: Props) {
         }
     })
 
-    console.log(sortedPlayers);
     const onClick = () => {
         initGame();
     }
@@ -82,7 +81,6 @@ function GameFinished({winningNumber, playersData, initGame}: Props) {
             <div>
                 <Button
                     title="Novej oběd"
-                    isButtonDisabled={false}
                     onClick={onClick}
                 />
             </div>

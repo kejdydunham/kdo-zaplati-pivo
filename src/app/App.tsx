@@ -11,7 +11,7 @@ interface Props {
 function App({store}: Props) {
     return (
         <Redux store={store}>
-            <div>
+            <div className="app">
                 <Header/>
                 <Content/>
             </div>

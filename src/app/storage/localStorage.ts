@@ -1,4 +1,4 @@
-import {RootState} from "./types";
+import {RootState} from "../types";
 
 let storage: Storage | undefined;
 const wnd: any = window;

@@ -1,6 +1,11 @@
 
 .header {
   display: flex;
-  justify-content: center;
-  width: 100%;
+  justify-content: start;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.header .title {
+  font-size: 2rem;
 }

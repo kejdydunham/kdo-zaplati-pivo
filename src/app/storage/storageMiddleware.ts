@@ -1,5 +1,5 @@
 import {Middleware, Store} from "redux";
-import {RootState} from "./types";
+import {RootState} from "../types";
 import {preserveStateToStorage} from "./localStorage";
 
 // @ts-ignore

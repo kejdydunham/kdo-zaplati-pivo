@@ -6,9 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import {createLogger} from 'redux-logger';
 import {RootState} from "./app/types";
 import {applyMiddleware, createStore} from "redux";
-import {appInitialState, createRootReducer} from "./app/rootReducer";
-import storageMiddleware from "./app/storageMiddleware";
-import {retrieveStateFromStorage} from "./app/localStorage";
+import {appInitialState, createRootReducer} from "./app/storage/rootReducer";
+import storageMiddleware from "./app/storage/storageMiddleware";
+import {retrieveStateFromStorage} from "./app/storage/localStorage";
 
 const loadedStateFromStorage = retrieveStateFromStorage();
 
